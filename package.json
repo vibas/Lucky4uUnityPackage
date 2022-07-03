@@ -1,0 +1,13 @@
+{
+    "name": "com.lucky4u.lucky4uframework",
+    "version": "1.0.0",
+    "displayName": "Lucky4uFramework",
+    "description": "Custom Frameworks for UI, design pattern and extensions",
+    "unity":"2019.4",
+    "author": 
+    {
+        "name": "Vibas",
+        "email": "vibas.behera095@mail.com",
+        "url": "https://about.me/vibas.ranjan"
+    }
+}
