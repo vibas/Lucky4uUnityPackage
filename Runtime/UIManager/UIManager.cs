@@ -218,7 +218,7 @@ namespace UIFramework
             var screenData = new UIScreen.Data();
             screenData.Add("message", message);
 
-            ShowScreen(UltraMetaUI.PopupId_InfoPopUp, screenData, "InfoPopup", null);
+            //sShowScreen(UltraMetaUI.PopupId_InfoPopUp, screenData, "InfoPopup", null);
         }
 
         public void HideGenericPopup()
