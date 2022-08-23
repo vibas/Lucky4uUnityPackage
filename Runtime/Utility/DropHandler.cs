@@ -2,11 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropHandler : MonoBehaviour, IDropHandler
+namespace Lucky4u.Utility
 {
-    public Action<GameObject, GameObject> OnItemDroppedEvent;
-    public void OnDrop(PointerEventData eventData)
+    public class DropHandler : MonoBehaviour, IDropHandler
     {
-        OnItemDroppedEvent?.Invoke(this.gameObject, eventData.selectedObject);
+        public Action<GameObject, GameObject> OnItemDroppedEvent;
+        public void OnDrop(PointerEventData eventData)
+        {
+            OnItemDroppedEvent?.Invoke(this.gameObject, eventData.selectedObject);
+        }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
-public class GridUnit : MonoBehaviour
+namespace Lucky4u.GridSystem
 {
+    public class GridUnit : MonoBehaviour
+    {
+    }
 }

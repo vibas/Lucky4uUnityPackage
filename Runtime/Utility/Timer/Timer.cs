@@ -1,44 +1,47 @@
 using UnityEngine;
-public class Timer
+namespace Lucky4u.Utility
 {
-    public bool ShouldRunTimer;
-    public bool IsTimerComplete;
-    public float waitTime;
-    public float currentTime;
-    public float RemainingTime => waitTime - currentTime;
-
-    public Timer(float totalWaitTime)
+    public class Timer
     {
-        waitTime = totalWaitTime;
-        currentTime = 0;
-        ShouldRunTimer = true;
-    }
+        public bool ShouldRunTimer;
+        public bool IsTimerComplete;
+        public float waitTime;
+        public float currentTime;
+        public float RemainingTime => waitTime - currentTime;
 
-    public void RunTimer()
-    {
-        if (ShouldRunTimer)
+        public Timer(float totalWaitTime)
         {
-            if (currentTime < waitTime)
+            waitTime = totalWaitTime;
+            currentTime = 0;
+            ShouldRunTimer = true;
+        }
+
+        public void RunTimer()
+        {
+            if (ShouldRunTimer)
             {
-                currentTime += Time.deltaTime;
-            }
-            else
-            {
-                OnTimerComplete();
+                if (currentTime < waitTime)
+                {
+                    currentTime += Time.deltaTime;
+                }
+                else
+                {
+                    OnTimerComplete();
+                }
             }
         }
-    }
 
-    void OnTimerComplete()
-    {
-        IsTimerComplete = true;
-        ShouldRunTimer = false;
-    }
+        void OnTimerComplete()
+        {
+            IsTimerComplete = true;
+            ShouldRunTimer = false;
+        }
 
-    public void Reset()
-    {
-        currentTime = 0;
-        IsTimerComplete = false;
-        ShouldRunTimer = true;
+        public void Reset()
+        {
+            currentTime = 0;
+            IsTimerComplete = false;
+            ShouldRunTimer = true;
+        }
     }
 }

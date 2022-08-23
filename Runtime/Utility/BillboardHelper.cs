@@ -1,37 +1,41 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BillboardHelper
+namespace Lucky4u.Utility
 {
-    Transform camTransform;
-	List<GameObject> billboardObjectsList;
-
-    public BillboardHelper()
+    public class BillboardHelper
     {
-        camTransform = Camera.main.transform;
-    }
+        Transform camTransform;
+        List<GameObject> billboardObjectsList;
 
-    public void RegisterBillbardObject(GameObject obj)
-    {
-        if (billboardObjectsList == null)
-            billboardObjectsList = new List<GameObject>();
-
-        billboardObjectsList.Add(obj);
-    }
-
-    public void UnregisterBillboardObject(GameObject obj)
-    {
-        if(billboardObjectsList.Contains(obj))
+        public BillboardHelper()
         {
-            billboardObjectsList.Remove(obj);
+            camTransform = Camera.main.transform;
         }
-    }
 
-    public void UpdateBillboard(GameObject obj)
-    {
-        if(billboardObjectsList.Contains(obj))
-        {  
-            obj.transform.LookAt(camTransform);
+        public void RegisterBillbardObject(GameObject obj)
+        {
+            if (billboardObjectsList == null)
+                billboardObjectsList = new List<GameObject>();
+
+            billboardObjectsList.Add(obj);
+        }
+
+        public void UnregisterBillboardObject(GameObject obj)
+        {
+            if (billboardObjectsList.Contains(obj))
+            {
+                billboardObjectsList.Remove(obj);
+            }
+        }
+
+        public void UpdateBillboard(GameObject obj)
+        {
+            if (billboardObjectsList.Contains(obj))
+            {
+                obj.transform.LookAt(camTransform);
+            }
         }
     }
 }
+

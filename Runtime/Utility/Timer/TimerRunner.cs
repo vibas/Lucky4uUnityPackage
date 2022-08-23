@@ -1,49 +1,52 @@
-public class TimerRunner : ITimerRunner
+namespace Lucky4u.Utility
 {
-    private Timer waitTimer;
+    public class TimerRunner : ITimerRunner
+    {
+        private Timer waitTimer;
 
-    public TimerRunner(float waitTime)
-    {
-        CreateNewWaitTimer(waitTime);
-    }
-    public void CreateNewWaitTimer(float waitTime)
-    {
-        if (waitTimer == null)
-            waitTimer = new Timer(waitTime);
-    }
-
-    public void RunUpdate()
-    {
-        if (waitTimer != null)
+        public TimerRunner(float waitTime)
         {
-            waitTimer.RunTimer();
+            CreateNewWaitTimer(waitTime);
         }
-    }
+        public void CreateNewWaitTimer(float waitTime)
+        {
+            if (waitTimer == null)
+                waitTimer = new Timer(waitTime);
+        }
 
-    public bool IsWaitTimerCompleted()
-    {
-        bool isWaitTimerComplete = false;
-        if (waitTimer != null)
-            isWaitTimerComplete = waitTimer.IsTimerComplete;
-        return isWaitTimerComplete;
-    }
+        public void RunUpdate()
+        {
+            if (waitTimer != null)
+            {
+                waitTimer.RunTimer();
+            }
+        }
 
-    public void ResetWaitTimer()
-    {
-        if(waitTimer!=null)
-            waitTimer.Reset();
-    }
+        public bool IsWaitTimerCompleted()
+        {
+            bool isWaitTimerComplete = false;
+            if (waitTimer != null)
+                isWaitTimerComplete = waitTimer.IsTimerComplete;
+            return isWaitTimerComplete;
+        }
 
-    public void DestroyWaitTimer()
-    {
-        waitTimer = null;
-    }
+        public void ResetWaitTimer()
+        {
+            if (waitTimer != null)
+                waitTimer.Reset();
+        }
 
-    public float GetRemainingTime()
-    {
-        float remainingTime = 0;
-        if (waitTimer != null)
-            remainingTime = waitTimer.RemainingTime;
-        return remainingTime;
+        public void DestroyWaitTimer()
+        {
+            waitTimer = null;
+        }
+
+        public float GetRemainingTime()
+        {
+            float remainingTime = 0;
+            if (waitTimer != null)
+                remainingTime = waitTimer.RemainingTime;
+            return remainingTime;
+        }
     }
 }

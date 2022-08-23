@@ -1,9 +1,12 @@
 using UnityEngine.SceneManagement;
 
-public class SceneLoader
+namespace Lucky4u.Utility
 {
-    public void LoadScene(string sceneName)
+    public class SceneLoader
     {
-        SceneManager.LoadScene(sceneName);
+        public void LoadScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

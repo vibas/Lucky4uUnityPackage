@@ -1,23 +1,28 @@
 using UnityEngine;
-public class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>
+
+namespace Lucky4u.Common
 {
-    private static T instance;
-    public static T Instance
+    public class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>
     {
-        get {
-            if (instance == null)
-            {   
-                T[] assets = Resources.LoadAll<T>("");
-                if(assets!=null && assets.Length>0)
+        private static T instance;
+        public static T Instance
+        {
+            get
+            {
+                if (instance == null)
                 {
-                    instance = assets[0];
+                    T[] assets = Resources.LoadAll<T>("");
+                    if (assets != null && assets.Length > 0)
+                    {
+                        instance = assets[0];
+                    }
+                    else
+                    {
+                        Debug.LogError("No config found");
+                    }
                 }
-                else
-                {
-                    Debug.LogError("No config found");
-                }
+                return instance;
             }
-            return instance;
         }
     }
 }

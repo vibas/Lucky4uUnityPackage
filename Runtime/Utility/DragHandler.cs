@@ -1,28 +1,31 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+namespace Lucky4u.Utility
 {
-    CanvasGroup canvasGroup => GetComponent<CanvasGroup>();
-    Vector3 startPosition;
-    public bool canDrag;
-    public void OnBeginDrag(PointerEventData eventData)
+    public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        if(canDrag)
+        CanvasGroup canvasGroup => GetComponent<CanvasGroup>();
+        Vector3 startPosition;
+        public bool canDrag;
+        public void OnBeginDrag(PointerEventData eventData)
         {
-            canvasGroup.blocksRaycasts = false;
-            startPosition = transform.position;
+            if (canDrag)
+            {
+                canvasGroup.blocksRaycasts = false;
+                startPosition = transform.position;
+            }
         }
-    }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = Input.mousePosition;
-    }
+        public void OnDrag(PointerEventData eventData)
+        {
+            transform.position = Input.mousePosition;
+        }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        transform.position = startPosition;
-        canvasGroup.blocksRaycasts = true;
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            transform.position = startPosition;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 }

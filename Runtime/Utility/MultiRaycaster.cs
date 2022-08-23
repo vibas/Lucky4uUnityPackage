@@ -1,37 +1,40 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class MultiRaycaster : MonoBehaviour
+namespace Lucky4u.Utility
 {
-    [SerializeField] Transform[] RaySourceTransforms;
-    RaycastHit[] hitInfoArray;
-
-    private void Start()
+    public class MultiRaycaster : MonoBehaviour
     {
-        hitInfoArray = new RaycastHit[RaySourceTransforms.Length];
-    }
+        [SerializeField] Transform[] RaySourceTransforms;
+        RaycastHit[] hitInfoArray;
 
-    public List<GameObject> CastRay(string obstacleTag, float rayDistance)
-    {
-        List<GameObject> unitList = new List<GameObject>();
-        for (int i = 0; i < RaySourceTransforms.Length; i++)
+        private void Start()
         {
-            if (Physics.Raycast(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, out hitInfoArray[i]))
+            hitInfoArray = new RaycastHit[RaySourceTransforms.Length];
+        }
+
+        public List<GameObject> CastRay(string obstacleTag, float rayDistance)
+        {
+            List<GameObject> unitList = new List<GameObject>();
+            for (int i = 0; i < RaySourceTransforms.Length; i++)
             {
-                if (hitInfoArray[i].collider.CompareTag(obstacleTag))
+                if (Physics.Raycast(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, out hitInfoArray[i]))
                 {
-                    Debug.DrawRay(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, Color.red);
-                    if(!unitList.Contains(hitInfoArray[i].collider.transform.parent.gameObject))
+                    if (hitInfoArray[i].collider.CompareTag(obstacleTag))
                     {
-                        unitList.Add(hitInfoArray[i].collider.transform.parent.gameObject);
+                        Debug.DrawRay(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, Color.red);
+                        if (!unitList.Contains(hitInfoArray[i].collider.transform.parent.gameObject))
+                        {
+                            unitList.Add(hitInfoArray[i].collider.transform.parent.gameObject);
+                        }
                     }
                 }
+                else
+                {
+                    Debug.DrawRay(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, Color.green);
+                }
             }
-            else
-            {
-                Debug.DrawRay(RaySourceTransforms[i].position, RaySourceTransforms[i].forward * rayDistance, Color.green);
-            }
+            return unitList;
         }
-        return unitList;
     }
 }

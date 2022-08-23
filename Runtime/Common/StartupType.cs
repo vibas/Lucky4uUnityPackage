@@ -1,23 +1,27 @@
 using System;
 
-public enum StartupType {
-	NORMAL,
-	PREFAB
-}
-
-public class StartupAttribute : Attribute
+namespace Lucky4u.Common
 {
-	public StartupType Type { get; set; }
-	public Type ParentType { get; set; }
-	public StartupAttribute (StartupType type = StartupType.NORMAL)
+	public enum StartupType
 	{
-		Type = type;
-		ParentType = null;
+		NORMAL,
+		PREFAB
 	}
 
-	public StartupAttribute (StartupType type, Type parentType, string prefabURL = "")
+	public class StartupAttribute : Attribute
 	{
-		Type = type;
-		ParentType = parentType;
+		public StartupType Type { get; set; }
+		public Type ParentType { get; set; }
+		public StartupAttribute(StartupType type = StartupType.NORMAL)
+		{
+			Type = type;
+			ParentType = null;
+		}
+
+		public StartupAttribute(StartupType type, Type parentType, string prefabURL = "")
+		{
+			Type = type;
+			ParentType = parentType;
+		}
 	}
 }

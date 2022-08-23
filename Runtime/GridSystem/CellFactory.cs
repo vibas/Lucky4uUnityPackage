@@ -1,4 +1,5 @@
 using UnityEngine;
+using Lucky4u.GridSystem;
 
 public class CellFactory
 {
