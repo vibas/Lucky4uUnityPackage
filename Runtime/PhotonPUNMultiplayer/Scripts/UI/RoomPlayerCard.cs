@@ -1,11 +1,11 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class RoomPlayerCard : MonoBehaviour
 {
     public int userID;
-    public TextMeshProUGUI UserIDText;
-    public TextMeshProUGUI UserNameText;
+    public Text UserIDText;
+    public Text UserNameText;
 
     public void UpdateCardInfo(int ID, string userName)
     {
