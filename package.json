@@ -1,6 +1,6 @@
 {
     "name": "com.lucky4u.lucky4uframework",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "displayName": "Lucky4uFramework",
     "description": "Custom Frameworks for UI, design pattern, Utility and extensions",
     "unity":"2019.4",

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace PhotonPUNMultiplayer
+namespace Lucky4u.PhotonPUNMultiplayer
 {
     [System.Serializable]
     public struct UserInfo

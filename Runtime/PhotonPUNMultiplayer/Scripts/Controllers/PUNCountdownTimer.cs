@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Photon.Pun;
 
-namespace PhotonPUNMultiplayer
+namespace Lucky4u.PhotonPUNMultiplayer
 {
     public class PUNCountdownTimer : MonoBehaviourPunCallbacks
     {

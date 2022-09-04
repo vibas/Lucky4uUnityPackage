@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PhotonPUNMultiplayer
+namespace Lucky4u.PhotonPUNMultiplayer
 {
     public class MatchmakingScreen : MonoBehaviour
     {

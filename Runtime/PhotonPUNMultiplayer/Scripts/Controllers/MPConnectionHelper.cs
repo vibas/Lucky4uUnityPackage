@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
-using PhotonPUNMultiplayer;
+using Lucky4u.PhotonPUNMultiplayer;
 
 public class MPConnectionHelper
 {

@@ -3,7 +3,7 @@ using Photon.Pun;
 using System;
 using System.Collections.Generic;
 
-namespace PhotonPUNMultiplayer
+namespace Lucky4u.PhotonPUNMultiplayer
 {
     public class PUNGamePlayer : MonoBehaviour, IPhotonPlayer
     {

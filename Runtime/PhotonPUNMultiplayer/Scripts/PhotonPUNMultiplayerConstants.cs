@@ -1,4 +1,4 @@
-﻿namespace PhotonPUNMultiplayer
+﻿namespace Lucky4u.PhotonPUNMultiplayer
 {
     public class PhotonPUNMultiplayerConstants
     {

@@ -7,7 +7,7 @@ using ExitGames.Client.Photon;
 using Photon.Pun.UtilityScripts;
 using System.Linq;
 
-namespace PhotonPUNMultiplayer
+namespace Lucky4u.PhotonPUNMultiplayer
 {
 	public class PUNConnectionManager : MonoBehaviourPunCallbacks, IOnEventCallback, IMultiplayerConnection, IPUNConnection
 	{
